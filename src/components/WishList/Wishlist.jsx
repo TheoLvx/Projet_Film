@@ -4,7 +4,7 @@ import { WishlistContext } from "../../context/WishlistContext";
 const Wishlist = () => {
   const { wishlist, dispatch } = useContext(WishlistContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 6; // 🔥 9 films par page
+  const moviesPerPage = 6;
 
   const removeFromWishlist = (id) => {
     dispatch({ type: "REMOVE_FROM_WISHLIST", payload: id });
@@ -30,7 +30,6 @@ const Wishlist = () => {
         ))}
       </div>
 
-      {/* Pagination */}
       {wishlist.length > moviesPerPage && (
         <div className="pagination">
           <button className="btn-primary" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>

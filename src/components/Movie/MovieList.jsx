@@ -8,7 +8,6 @@ const MovieList = () => {
   const [filter, setFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("default");
 
-  // ✅ Filtres existants
   const filteredMovies = movies.filter((movie) => {
     if (filter === "4plus") return movie.rating >= 4;
     if (filter === "3") return movie.rating === 3;
@@ -16,23 +15,20 @@ const MovieList = () => {
     return true;
   });
 
-  // ✅ Tri des films selon l'option sélectionnée
   const sortedMovies = [...filteredMovies].sort((a, b) => {
-    if (sortOrder === "az") return a.title.localeCompare(b.title); // A-Z
-    if (sortOrder === "za") return b.title.localeCompare(a.title); // Z-A
-    if (sortOrder === "best") return b.rating - a.rating; // Meilleure note -> Pire note
-    if (sortOrder === "worst") return a.rating - b.rating; // Pire note -> Meilleure note
-    return 0; // Pas de tri
+    if (sortOrder === "az") return a.title.localeCompare(b.title); 
+    if (sortOrder === "za") return b.title.localeCompare(a.title); 
+    if (sortOrder === "best") return b.rating - a.rating; 
+    if (sortOrder === "worst") return a.rating - b.rating; 
+    return 0; 
   });
 
   return (
     <div>
       <h2>📜 Ma Liste de Films</h2>
 
-      {/* ✅ Formulaire pour ajouter un film */}
       <MovieForm />
 
-      {/* ✅ Sélection du filtre */}
       <label>
         Filtrer par note :
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
@@ -43,7 +39,6 @@ const MovieList = () => {
         </select>
       </label>
 
-      {/* ✅ Sélection du tri */}
       <label>
         Trier par :
         <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
@@ -55,7 +50,6 @@ const MovieList = () => {
         </select>
       </label>
 
-      {/* ✅ Affichage des films triés */}
       {sortedMovies.length > 0 ? (
         <div className="movie-grid">
           {sortedMovies.map((movie) => <MovieItem key={movie.id} movie={movie} />)}

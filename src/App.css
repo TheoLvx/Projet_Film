@@ -1,4 +1,3 @@
-/* Styles globaux */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
@@ -10,7 +9,6 @@ body {
   min-height: 100vh;
 }
 
-/* Conteneur principal */
 .container {
   width: 90%;
   max-width: 900px;
@@ -22,7 +20,6 @@ body {
   text-align: center;
 }
 
-/* Menu de navigation */
 .menu {
   display: flex;
   justify-content: center;
@@ -30,7 +27,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Boutons */
+
 button {
   cursor: pointer;
   border: none;
@@ -64,7 +61,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
@@ -88,7 +84,6 @@ textarea {
   min-height: 80px;
 }
 
-/* Grille des films */
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -97,7 +92,6 @@ textarea {
   padding: 10px;
 }
 
-/* Cartes des films */
 .movie-card {
   text-align: center;
   background: white;
@@ -138,7 +132,6 @@ textarea {
   margin-top: 5px;
 }
 
-/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -159,7 +152,6 @@ textarea {
   font-weight: bold;
 }
 
-/* Ajustements pour mobile */
 @media screen and (max-width: 768px) {
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -171,11 +163,10 @@ textarea {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-/* ✅ Ajout d'un léger espace entre les boutons Modifier & Supprimer */
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 10px; /* 🔥 Espacement entre les boutons */
+  gap: 10px; 
   margin-top: 10px;
 }
 

@@ -9,7 +9,7 @@ const wishlistReducer = (state, action) => {
     case "REMOVE_FROM_WISHLIST":
       return state.filter((movie) => movie.id !== action.payload);
     case "SET_WISHLIST":
-      return action.payload; // Charger depuis localStorage
+      return action.payload; 
     default:
       return state;
   }
@@ -21,7 +21,6 @@ export const WishlistProvider = ({ children }) => {
     return storedWishlist ? JSON.parse(storedWishlist) : [];
   });
 
-  // Sauvegarde en localStorage
   useEffect(() => {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }, [wishlist]);

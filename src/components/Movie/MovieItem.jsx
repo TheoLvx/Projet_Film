@@ -33,7 +33,6 @@ const MovieItem = ({ movie }) => {
           <p className="movie-rating">Note : {"⭐".repeat(movie.rating)} ({movie.rating}/5)</p>
           {movie.comments && <p className="movie-comments">{movie.comments}</p>}
           
-          {/* ✅ Ajout d'une div pour espacer les boutons */}
           <div className="button-group">
             <button className="btn-primary" onClick={() => setIsEditing(true)}>Modifier</button>
             <button className="btn-danger" onClick={() => dispatch({ type: "DELETE_MOVIE", payload: movie.id })}>

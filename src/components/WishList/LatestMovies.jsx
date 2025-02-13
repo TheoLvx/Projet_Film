@@ -5,7 +5,7 @@ const LatestMovies = () => {
   const [movies, setMovies] = useState([]);
   const { wishlist, dispatch } = useContext(WishlistContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 6; // 🔥 On affiche 9 films par page (3x3)
+  const moviesPerPage = 6; 
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -45,7 +45,6 @@ const LatestMovies = () => {
         ))}
       </div>
 
-      {/* Pagination */}
       <div className="pagination">
         <button className="btn-primary" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
           ⬅ Précédent
